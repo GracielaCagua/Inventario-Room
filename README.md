@@ -1,12 +1,11 @@
 # Inventario Room
 
-App Android (Kotlin + Jetpack Compose) del codelab "Persist data with Room".
+App Android (Kotlin + Jetpack Compose) de los codelabs "Persist data with Room" y
+"Read and update data with Room".
 
-- `data/Item.kt` -> Entity (@Entity, tabla "items")
-- `data/ItemDao.kt` -> DAO (insert, update, delete, getItem, getAllItems)
-- `data/InventoryDatabase.kt` -> Base de datos Room (singleton)
-- `data/OfflineItemsRepository.kt` -> Repositorio que usa el DAO
-- `data/AppContainer.kt` -> Inyeccion de dependencias manual
-- `ui/item/ItemEntryViewModel.kt` -> saveItem() guarda el articulo en la base de datos
-
-Para ver los datos guardados: View > Tool Windows > App Inspection > Database Inspector.
+- Entity `Item`, DAO `ItemDao`, base de datos `InventoryDatabase`
+- Repositorio `OfflineItemsRepository` e inyeccion de dependencias manual (`AppContainer`)
+- `HomeScreen`: lista de articulos (LazyColumn) con StateFlow
+- `ItemDetailsScreen`: detalle, boton Sell (reduce cantidad) y Delete (elimina)
+- `ItemEditScreen`: edicion de un articulo
+- Pruebas instrumentadas del DAO: `androidTest/.../ItemDaoTest.kt`
